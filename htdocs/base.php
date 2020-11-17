@@ -1,9 +1,14 @@
 <?php
 static $indexphp = 'http://localhost/index.php';
-static $home = 'http://localhost/page/main.php';
-static $mapalchol = 'http://localhost/map/mapalchol.php';
-static $maporigin = 'http://localhost/map/maporigin.php';
+static $homephp = 'http://localhost/home/home.php';
+static $rankphp = 'http://localhost/rank/rank_home.php';
 static $snackphp = 'http://localhost/snack/snack_list.php';
+static $alcoholmapphp = 'http://localhost/map/mapalcohol.php';
+static $alcoholmaporiginphp = 'http://localhost/map/maporigin.php';
+static $mypagephp = 'http://localhost/mypage/mypage.php';
+static $logoutphp = 'http://localhost/member/logout.php';
+static $myreviewphp = 'http://localhost/mypage/myreview.php';
+static $myqnaphp = 'http://localhost/mypage/myqna.php';
 ?>
 
 <!DOCTYPE html>
@@ -16,20 +21,20 @@ static $snackphp = 'http://localhost/snack/snack_list.php';
     <title>Drink Review</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
-        <a class="navbar-brand" href=# onclick="location.href='<?php echo $indexphp?>'"> Drink Review </a>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href=# onclick="location.href='<?php echo $homephp?>'"> Drink Review </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
-              <a class="nav-link" href="#" onclick="location.href='<?php echo $home?>'"> Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#" onclick="location.href='<?php echo $homephp?>'"> Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Rank</a>
+              <a class="nav-link" href="#" onclick="location.href='<?php echo $rankphp?>'">Rank</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
               <a class="nav-link" href="#" onclick="location.href='<?php echo $snackphp?>'">Snack</a>
             </li>
             <li class="nav-item dropdown">
@@ -37,8 +42,8 @@ static $snackphp = 'http://localhost/snack/snack_list.php';
                 Alcohol Map
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#" onclick="location.href='<?php echo $maporigin?>'">Origin</a>
-                <a class="dropdown-item" href="#" onclick="location.href='<?php echo $mapalchol?>'">Alchol Type</a>
+                <a class="nav-link" href="#" onclick="location.href='<?php echo $alcoholmapphp?>'">Alcohol Map</a>
+                <a class="nav-link" href="#" onclick="location.href='<?php echo $alcoholmaporiginphp?>'">Alcohol Map via Origin</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -46,9 +51,11 @@ static $snackphp = 'http://localhost/snack/snack_list.php';
                 My Page
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="./member/member/login_ok.php">Log in</a>
-                <a class="dropdown-item" href="#">Sign up</a>
-                <a class="dropdown-item" href="#">My Page</a>
+                <a class="nav-link" href="#" onclick="location.href='<?php echo $mypagephp?>'">My Page</a>
+                <a class="nav-link" href="#" onclick="location.href='<?php echo $myreviewphp?>'">My Review</a>
+                <a class="nav-link" href="#" onclick="location.href='<?php echo $myqnaphp?>'">My QnA</a>
+                <a class="nav-link" href="#" onclick="location.href='<?php echo $logoutphp?>'">Log out</a>
+
               </div>
             </li>
             <li class="nav-item">

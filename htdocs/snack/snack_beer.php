@@ -1,7 +1,8 @@
 <?php
   include "../base.php";
-  
-  $connect = mysqli_connect('localhost', 'root', '1234', 'team15') or die ("connect fail");
+  include "../config.php";
+
+  //$connect = mysqli_connect('localhost', 'root', '1234', 'team15') or die ("connect fail");
 ?>
 <article class="container">
 <br><br>
@@ -30,21 +31,21 @@
 
   <?php
 
-  $sql_alc = "select snack_name,snack_img,snack_recipe, snack_exp from snack where matching1_table=1 ";
+  $sql_alc = "select name,img,recipe, exp from snack where matching1_table=1 ";
   $run_alc = mysqli_query($connect, $sql_alc);
   while($result_alc = mysqli_fetch_array($run_alc)) {
     echo '
     <a href="#" class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">'.$result_alc["snack_name"].'</h5>
+        <h5 class="mb-1">'.$result_alc["name"].'</h5>
         </div>
-        <img src='.$result_alc["snack_img"].' width="350" height="300" class="align-self-start mr-3" alt="...">
+        <img src='.$result_alc["img"].' width="350" height="300" class="align-self-start mr-3" alt="...">
 
         <br>
         <h6>Recipe</h6>
-        <p class="mb-1">'.$result_alc["snack_recipe"].'</p>
+        <p class="mb-1">'.$result_alc["recipe"].'</p>
         <h6>Exp</h6>
-        <p class="mb-1">'.$result_alc["snack_exp"].'</p>
+        <p class="mb-1">'.$result_alc["exp"].'</p>
     </a>
     </div>
   ';

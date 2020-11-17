@@ -1,20 +1,21 @@
 <!DOCTYPE html>
  <?php
-    $mysqli = mysqli_connect('localhost', 'root', '1234', 'team15') or die ("connect fail");
+    include "../base.php"; //including base.php
+  	include "../config.php";  // including configuration file
     if(mysqli_connect_error()){
 
         printf("Connection failed : %s\n", mysqli_connect_error());
     
         }
-	include "../base.php"; //including base.php
+	
 ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="TK.css">
+    <link rel="stylesheet" href="/css/TK.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Drink Review</title>
+    <title>Map origin</title>
 </head>
 <body>
    
@@ -23,7 +24,7 @@
 		<div class="jumbotron" sttle="background-color : #F8F8FF">
 			
 			<form name="frmdropdown" method="post" action="maporigin.php">
-     		<left>
+     		<center>
             <h2 align="center">Alchol Map</h2>
         
             <strong> Select origin : </strong> 
@@ -45,7 +46,7 @@
 	 
 
 		 
-   <table border="1" align = 'left'>
+   <table border="1" align = 'center'>
  <tr align="center">
      <th>Alchol Name </th>      
  </tr> 

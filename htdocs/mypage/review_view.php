@@ -129,7 +129,7 @@ width: 500px;
                 <td colspan="4" class="view_title"><?php echo $rows['review_title']?></td>
         </tr>
         <tr>
-                <td class="view_id">작성자</td>
+                <td class="view_id">id</td>
                 <td class="view_id2"><?php echo $rows['review_id']?></td>
         </tr>
  
@@ -143,18 +143,18 @@ width: 500px;
  
         <!-- MODIFY & DELETE -->
         <div class="view_btn">
-                <button class="view_btn1" onclick="location.href='./myreview.php'">목록으로</button>
-                <button class="view_btn1" onclick="location.href='./modify.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>'">수정</button>
+                <button class="view_btn1" onclick="location.href='./myreview.php'">menu</button>
+                <button class="view_btn1" onclick="location.href='./review_modify.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>'">modify</button>
  
-                <button class="view_btn1" onclick="location.href='./delete.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>'">삭제</button>
+                <button class="view_btn1" onclick="location.href='./review_delete.php?number=<?=$number?>&id=<?=$_SESSION['userid']?>'">delete</button>
         </div>
 
 
         </tbody>
         </table>
-        <div class="view_btn">
+        <!-- <div class="view_btn">
                 <button class="view_btn1" onclick="location.href='./write.php'">글쓰기</button>
-        </div>
+        </div> -->
 
         <!-- <div class = text>
         <font style="cursor: hand"onClick="location.href='./write.php'">글쓰기</font>

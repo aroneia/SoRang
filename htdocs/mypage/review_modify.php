@@ -1,4 +1,9 @@
-
+<?php
+  include "../base.php";
+  include "../config.php";
+  
+  //$connect = mysqli_connect('localhost', 'root', '1234', 'team15') or die ("connect fail");
+?> 
 <!DOCTYPE html>
  
  <html>
@@ -79,68 +84,36 @@
  </style>
  
  <body>
- <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-         <a class="navbar-brand" href="#">Drink Review</a>
-         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-           <span class="navbar-toggler-icon"></span>
-         </button>
-         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-           <ul class="navbar-nav">
-             <li class="nav-item active">
-               <a class="nav-link" href="main.php"> Home <span class="sr-only">(current)</span></a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="#">Rank</a>
-             </li>
-             <li class="nav-item">
-               <a class="nav-link" href="../snack/snack_home.php">Snack</a>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="#">Alcohol Map</a>
-             </li>
-             <li class="nav-item dropdown">
-               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                 My Page
-               </a>
-               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                 <a class="dropdown-item" href="#">Log in / Log out</a>
-                 <a class="dropdown-item" href="#">Sign up</a>
-                 <a class="dropdown-item" href="../mypage/myreview.php">My Page</a>
-               </div>
-             </li>
-             <li class="nav-item">
-                 <a class="nav-link" href="#">Help</a>
-             </li>
-           </ul>
-         </div>
-     </nav>
-     <?php    
-            $connect = mysqli_connect('localhost', 'root', '1234', 'team15') or die ("connect fail");
+ 
+ <?php    
+           // $connect = mysqli_connect('localhost', 'root', '1234', 'team15') or die ("connect fail");
             $id = $_GET['id'];
             $number = $_GET['number'];
             $query = "select review_title, review, review_id from user_review where review_no =$number";
-            $result = $connect->query($query);
+            $result = $db->query($query);
             $rows = mysqli_fetch_assoc($result);
  
             $title = $rows['review_title'];
             $content = $rows['review'];
             $usrid = $rows['review_id'];
  
-            session_start();
+           // session_start();
  
  
             $URL = "./myreview.php";
  
             
-                if(!isset($_SESSION['userid'])) {
-        ?>              <script>
+            if(!isset($_SESSION['userid'])) {
+                  ?>
+                  <script>
                                 alert("권한이 없습니다.");
                                 location.replace("<?php echo $URL?>");
-                        </script>
+                  </script>
         <?php   }
                 else if($_SESSION['userid']==$usrid) {
         ?>
-        <form method = "get" action = "modify_action.php">
+        <br>
+        <form method = "get" action = "review_modify_action.php">
         <table  style="padding-top:50px" align = center width=700 border=0 cellpadding=2 >
                 <tr>
                 <td height=20 align= center bgcolor=#ccc><font color=white> 글수정</font></td>
@@ -167,7 +140,7 @@
  
                         <center>
                         <input type="hidden" name="number" value="<?=$number?>">
-                        <input type = "submit" value="작성">
+                        <input type = "submit" value="ok">
                         </center>
                 </td>
                 </tr>

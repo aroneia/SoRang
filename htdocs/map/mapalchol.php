@@ -1,21 +1,21 @@
 <!DOCTYPE html>
  <?php
-  
-  	$mysqli = mysqli_connect('localhost', 'root', '1234', 'team15') or die ("connect fail");
+    include "../base.php"; //including base.php
+  	include "../config.php";  // including configuration file
  	if(mysqli_connect_error()){
 
 	  printf("Connection failed : %s\n", mysqli_connect_error());
   
 	  }  
-	include "../base.php"; //including base.php
+	
 ?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="TK.css">
+    <link rel="stylesheet" href="/css/TK.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <title>Drink Review</title>
+    <title>Map alchol</title>
 </head>
 <body>
    
@@ -25,8 +25,8 @@
 			
 	 
 		<form name="aldropdown" method="post" action="mapalchol.php">
-		<left>
-					
+		<center>
+			<h2 align="center">Alchol Map</h2>
 		    <strong> Select alcohol type : </strong> 
 			<select name="tabName"> 
 			<option value=""> -----------SELECT----------- </option> 
@@ -45,9 +45,12 @@
 			<br><br>
 		 
  
- 		<table border="1">
- 		<th align='center'>Origin</th>
-		 <th align='center'> %</th>
+ 	<table border="1">
+ <tr align="center">
+     <th align="center">Origin</th>
+	 <th align="center">Percentage(%)</th>     
+ </tr> 
+ 		
 		<?php 
   if($_SERVER['REQUEST_METHOD'] == "POST")
   {
@@ -56,7 +59,7 @@
 		 $dd = "select COALESCE(origin,'ALL origin') as origin,round(AVG(score),2)as avg_score FROM $des1 GROUP BY origin with ROLLUP ";
          $cc_res = mysqli_query($mysqli,$cc);
 		 $dd_res = mysqli_query($mysqli,$dd);
-		 //$res=mysqli_query($mysqli,$aa);
+		 
          
  
          echo "<tr><td colspan='5'></td></tr>";
@@ -67,8 +70,11 @@
 				<br>\n";  
 		 }	?></table>
 	<table border="1">
- <th align='center'>Origin</th>
- <th align='center'>Average sccre</th>	 
+ <tr align="center">
+     <th align="center">Origin</th>
+	 <th align="center">Average Score</th>	     
+ </tr> 
+ 
 <?php		 
 		 echo "<tr><td colspan='5'></td></tr>";
 		 while($dd_rr=mysqli_fetch_row($dd_res)){ //평점
