@@ -1,5 +1,6 @@
 <?php
 static $indexphp = 'http://localhost/index.php';
+<<<<<<< HEAD
 static $homephp = 'http://localhost/home/home.php';
 static $rankphp = 'http://localhost/rank/rank_home.php';
 static $snackphp = 'http://localhost/snack/snack_list.php';
@@ -9,6 +10,14 @@ static $mypagephp = 'http://localhost/mypage/mypage.php';
 static $logoutphp = 'http://localhost/member/logout.php';
 static $myreviewphp = 'http://localhost/mypage/myreview.php';
 static $myqnaphp = 'http://localhost/mypage/myqna.php';
+=======
+static $home = 'http://localhost/home/home.php';
+static $mapalchol = 'http://localhost/map/mapalchol.php';
+static $maporigin = 'http://localhost/map/maporigin.php';
+static $snackphp = 'http://localhost/snack/snack_list.php';
+static $logoutphp = 'http://localhost/member/member/logout.php';
+
+>>>>>>> 9ca11a7d8ade068de2206f77889860708765b485
 ?>
 
 <!DOCTYPE html>
@@ -21,15 +30,26 @@ static $myqnaphp = 'http://localhost/mypage/myqna.php';
     <title>Drink Review</title>
 </head>
 <body>
+<<<<<<< HEAD
     <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand" href=# onclick="location.href='<?php echo $homephp?>'"> Drink Review </a>
+=======
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+
+        <a class="navbar-brand" href=# onclick="location.href='<?php echo $indexphp?>'"> Drink Review </a>
+>>>>>>> 9ca11a7d8ade068de2206f77889860708765b485
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item active">
+<<<<<<< HEAD
               <a class="nav-link" href="#" onclick="location.href='<?php echo $homephp?>'"> Home <span class="sr-only">(current)</span></a>
+=======
+              <a class="nav-link" href="#" onclick="location.href='<?php echo $indexphp?>'"> Home <span class="sr-only">(current)</span></a>
+>>>>>>> 9ca11a7d8ade068de2206f77889860708765b485
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" onclick="location.href='<?php echo $rankphp?>'">Rank</a>
@@ -51,11 +71,17 @@ static $myqnaphp = 'http://localhost/mypage/myqna.php';
                 My Page
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<<<<<<< HEAD
                 <a class="nav-link" href="#" onclick="location.href='<?php echo $mypagephp?>'">My Page</a>
                 <a class="nav-link" href="#" onclick="location.href='<?php echo $myreviewphp?>'">My Review</a>
                 <a class="nav-link" href="#" onclick="location.href='<?php echo $myqnaphp?>'">My QnA</a>
                 <a class="nav-link" href="#" onclick="location.href='<?php echo $logoutphp?>'">Log out</a>
 
+=======
+                <a class="dropdown-item" href="onclick="location.href='<?php echo $logout.php?>'"">Log out</a>
+                <a class="dropdown-item" onclick="location.href='<?php echo $signupphp?>'">Sign up</a>
+                <a class="dropdown-item" href="#">My Page</a>
+>>>>>>> 9ca11a7d8ade068de2206f77889860708765b485
               </div>
             </li>
             <li class="nav-item">
